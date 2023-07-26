@@ -7,7 +7,7 @@ Web Automation Testing by Muhammad Akbar
 - Install Cucumber (Gherkin) Full Support by Alexander Krechik at VSCode Extensions
 
 # How to Contribute
-- Clone it first to your local machine
+- Clone to your local machine
 `git clone github.com/akbarmhmmmd/web-testing.git`
 - Create your contribution code
 - Don't forget to create your new branch first for preventing conflict at `master` branch
