@@ -1,8 +1,8 @@
-# web-testing
+# Web-Testing
 Web Automation Testing by Muhammad Akbar
 
 # Pre-requisites
-- This repositeries using Cucumber as a Framework and WebdriverIO as browser driver
+- This repository utilized Cucumber as a Framework and WebdriverIO as browser driver
 - Install latest Node.js on your local machine
 - Install Cucumber (Gherkin) Full Support by Alexander Krechik at VSCode Extensions
 
@@ -16,5 +16,8 @@ Web Automation Testing by Muhammad Akbar
 `git add .`,
 `git commit -m "your commits"` ex: `git commit -m "feat: add more Scenario"`,
 `git push`
-- If the last command doesn't works, copy the `git push --upstream bla bla` command and run it,
+- If the last command doesn't works, copy the `git push --upstream bla bla` command and run it
 - Click URL contains "/pull" that will redirects you to create your pull request documentation
+
+# How to Run
+`npm run testChrome --scenario=webtesting @tags`, example: `npm run testChrome --scenario=webtesting @the-internet` it will run `heroku-web.feature`
