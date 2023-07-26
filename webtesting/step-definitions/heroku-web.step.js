@@ -9,12 +9,15 @@ When('User click Elements', async () => {
   await heroku.clickAddRemoveElements();
 });
 
-When('User click Add Element', async () => {
-  await heroku.clickAddElement();
-});
-
-When('User click Delete Element', async () => {
-  await heroku.clickDeleteElement();
+When(/^User click (Add|Delete) Element$/, async (element) => {
+  switch(element) {
+  case 'Add':
+    await heroku.clickAddElement();
+    break;
+  case 'Delete':
+    await heroku.clickDeleteElement();
+    break;
+  }
 });
 
 Then('User success Add Element', async () => {
