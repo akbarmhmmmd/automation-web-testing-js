@@ -1,18 +1,20 @@
 # web-testing
 web automation testing by Muhammad Akbar
 
-# tools & framework
-this repositeries using cucumber as a framework and webdriverIO as browser driver
+# Pre-requisites
+- This repositeries using Cucumber as a Framework and WebdriverIO as browser driver
+- Install latest Node.js on your local machine
+- Install Cucumber (Gherkin) Full Support by Alexander Krechik at VSCode Extensions
 
 # how to contribute
-- clone it first to your local machine
+- Clone it first to your local machine
 `git clone github.com/akbarmhmmmd/web-testing.git`
-- create your contribution code
-- don't forget to create your new branch first for preventing conflict at `master` branch
+- Create your contribution code
+- Don't forget to create your new branch first for preventing conflict at `master` branch
 `git checkout -b add-Scenario`
-- create pull request documentation for merge to master
+- Create pull request documentation for merge to master
 `git add .`,
 `git commit -m "your commits"` ex: `git commit -m "feat: add more Scenario"`,
 `git push`
-- if the last command doesn't works, copy the `git push --upstream bla bla` command and run it,
-- click URL contains "/pull" and create your pull request documentation
+- If the last command doesn't works, copy the `git push --upstream bla bla` command and run it,
+- Click URL contains "/pull" that will redirects you to create your pull request documentation
