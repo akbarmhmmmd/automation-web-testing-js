@@ -6,7 +6,7 @@ Web Automation Testing by Muhammad Akbar
 - Install latest Node.js on your local machine
 - Install Cucumber (Gherkin) Full Support by Alexander Krechik at VSCode Extensions
 
-# how to contribute
+# How to Contribute
 - Clone it first to your local machine
 `git clone github.com/akbarmhmmmd/web-testing.git`
 - Create your contribution code
