@@ -22,7 +22,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './webtesting/**/*.feature'
+        './test/**/**/*.feature'
     ],
     // Patterns to exclude.
     exclude: [
@@ -129,7 +129,7 @@ exports.config = {
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
-        require: ['./webtesting/step-definitions/*.js'],
+        require: ['./test/**/step-definitions/*.js'],
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
