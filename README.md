@@ -1,5 +1,5 @@
 # Web-Testing
-Web Automation Testing by Muhammad Akbar
+Web Automation Testing with JavaScript
 
 # Pre-requisites
 - This repository utilized Cucumber as a Framework and WebdriverIO as browser driver
