@@ -1,7 +1,7 @@
 {
-  "name": "akbartesting",
+  "name": "web-automation-testing",
   "version": "1.0.0",
-  "description": "Testing Project with Cucumber and WebdriverIO",
+  "description": "Web Automation Testing Project with Cucumber and WebdriverIO",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
