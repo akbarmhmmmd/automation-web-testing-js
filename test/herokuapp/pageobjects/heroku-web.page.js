@@ -1,6 +1,9 @@
 const welcomeText = $('//*[@id="content"]/h1');
 const deleteText = $('//*[contains(text(), "Delete")]');
 const checkboxesText = $('//*[contains(text(), "Checkboxes")]');
+const dropdownText = $('//*[contains(text(), "Dropdown List")]');
+const firstOption = $('//*[contains(text(), "Option 1")]');
+const secondOption= $('//*[contains(text(), "Option 2")]');
 const element = {
   addRemoveElementButton: $('//*[contains(text(), "Add/Remove")]'),
   addElementButton: $('//*[contains(text(), "Add Element")]'),
@@ -9,6 +12,8 @@ const element = {
   checkboxesButton: $('//*[contains(text(), "Checkboxes")]'),
   firstCheckboxButton: $('//*[@id="checkboxes"]/input[1]'),
   secondCheckboxButton: $('//*[@id="checkboxes"]/input[2]'),
+  dropdownButton: $('//*[contains(text(), "Dropdown")]'),
+  optionButton: $('#dropdown'),
 };
 
 const herokuUrl = "https://the-internet.herokuapp.com/";
@@ -25,6 +30,25 @@ const herokuWebPage = function herokuwebpage () {
     const clickButton = (click.charAt(0).toLowerCase() + click.slice(1)).replace(/\s+/g, '');
     await element[`${clickButton}Button`].waitForClickable();
     await element[`${clickButton}Button`].click();
+  };
+
+  this.selectOption = async (select) => {
+    await browser.pause(1000);
+
+    switch(select) {
+    case 'First':
+      await firstOption.click();
+      break;
+    case 'Second':
+      await secondOption.click();
+      break;
+    default:
+      throw new Error("Option doesn't exist");
+    };
+  };
+
+  this.validateSelectDropdown = async () => {
+    await dropdownText.waitForDisplayed({ timeout: 10000 });
   };
 
   this.validateCheckBox = async () => {

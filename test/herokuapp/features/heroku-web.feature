@@ -20,3 +20,10 @@ Feature: User simulating example in Heroku Web
     And User click First Checkbox Button
     And User click Second Checkbox Button
     Then User success click Checkboxes
+
+  Scenario: User can select Dropdown
+    When User click Dropdown Button
+    And User click Option Button
+    And User select First Option
+    And User select Second Option
+    Then User success select Dropdown
