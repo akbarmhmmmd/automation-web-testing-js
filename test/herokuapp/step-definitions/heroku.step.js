@@ -1,5 +1,5 @@
 import { Given, When, Then } from '@cucumber/cucumber';
-import heroku from '../pageobjects/heroku-web.page';
+import heroku from '../pageobjects/heroku.page';
 
 Given('User on Heroku Web', async () => {
   await heroku.validateHerokuWebPage();

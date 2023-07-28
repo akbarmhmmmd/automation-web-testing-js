@@ -131,7 +131,7 @@ exports.config = {
         // <string[]> (file/dir) require files before executing features
         require: ['./test/**/step-definitions/*.js'],
         // <boolean> show full backtrace for errors
-        backtrace: false,
+        backtrace: true,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
         requireModule: [],
         // <boolean> invoke formatters without executing steps
