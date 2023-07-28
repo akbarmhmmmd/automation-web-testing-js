@@ -1,7 +1,15 @@
 const welcomeText = $('//*[@id="content"]/h1');
-const addRemoveElementsButton = $('//*[contains(text(), "Add/Remove")]');
-const addElementButton = $('//*[contains(text(), "Add Element")]');
-const deleteButton = $('//*[contains(text(), "Delete")]');
+const deleteText = $('//*[contains(text(), "Delete")]');
+const checkboxesText = $('//*[contains(text(), "Checkboxes")]');
+const element = {
+  addRemoveElementButton: $('//*[contains(text(), "Add/Remove")]'),
+  addElementButton: $('//*[contains(text(), "Add Element")]'),
+  deleteElementButton: $('//*[contains(text(), "Delete")]'),
+  contextMenuButton: $('//*[contains(text(), "Context Menu")]'),
+  checkboxesButton: $('//*[contains(text(), "Checkboxes")]'),
+  firstCheckboxButton: $('//*[@id="checkboxes"]/input[1]'),
+  secondCheckboxButton: $('//*[@id="checkboxes"]/input[2]'),
+};
 
 const herokuUrl = "https://the-internet.herokuapp.com/";
 
@@ -13,28 +21,23 @@ const herokuWebPage = function herokuwebpage () {
     await expect(welcomeText).toHaveTextContaining("Welcome");
   };
 
-  this.clickAddRemoveElements = async () => {
-    await addRemoveElementsButton.waitForClickable();
-    await addRemoveElementsButton.click();
+  this.clickAction = async (click) => {
+    const clickButton = (click.charAt(0).toLowerCase() + click.slice(1)).replace(/\s+/g, '');
+    await element[`${clickButton}Button`].waitForClickable();
+    await element[`${clickButton}Button`].click();
   };
 
-  this.clickAddElement = async () => {
-    await addElementButton.waitForClickable();
-    await addElementButton.click();
+  this.validateCheckBox = async () => {
+    await checkboxesText.waitForDisplayed({ timeout: 10000 });
   };
-
-  this.clickDeleteElement = async () => {
-    await deleteButton.waitForClickable();
-    await deleteButton.click();
-  }
 
   this.validateAddElements = async () => {
-    await deleteButton.waitForDisplayed({ timeout: 10000 });
+    await deleteText.waitForDisplayed({ timeout: 10000 });
   };
 
   this.validateDeleteElements = async () => {
-    await addElementButton.waitForClickable({ timeout: 10000 });
-  }
+    await deleteText.waitForDisplayed({ reverse:true, timeout: 10000 });
+  };
 };
 
 module.exports = new herokuWebPage();
