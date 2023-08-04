@@ -20,4 +20,4 @@ Web Automation Testing with JavaScript
 - Click URL contains "/pull" that will redirects you to create your pull request documentation
 
 # How to Run
-`npm run testChrome --scenario=webtesting @tags`, example: `npm run testChrome --scenario=webtesting @the-internet` it will run `heroku-web.feature`
+`npm run testChrome --scenario=webtesting @tags`, example: `npm run testChrome --scenario=herokuapp @the-internet` it will run `heroku-web.feature`
