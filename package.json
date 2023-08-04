@@ -23,5 +23,8 @@
     "chromedriver": "^115.0.0",
     "wdio-chromedriver-service": "^8.1.1",
     "wdio-nuxt-service": "^0.1.0"
+  },
+  "dependencies": {
+    "webdriverio": "^8.14.3"
   }
 }
