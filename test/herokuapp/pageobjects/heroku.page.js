@@ -1,9 +1,14 @@
+// NOTES HEROKU APP PAGE OBJECTS
 const welcomeText = $('//*[@id="content"]/h1');
 const deleteText = $('//*[contains(text(), "Delete")]');
 const checkboxesText = $('//*[contains(text(), "Checkboxes")]');
 const dropdownText = $('//*[contains(text(), "Dropdown List")]');
 const firstOption = $('//*[contains(text(), "Option 1")]');
-const secondOption= $('//*[contains(text(), "Option 2")]');
+const secondOption = $('//*[contains(text(), "Option 2")]');
+const goneMessage = $('//*[@id="checkbox-example"]//*[contains(text(), "gone")]');
+const backMessage = $('//*[@id="checkbox-example"]//*[contains(text(), "back")]');
+const inputField = $('//*[@id="input-example"]/input');
+const disabledMessage = $('//*[@id="input-example"]//*[contains(text(), "disabled")]');
 const element = {
   addRemoveElementButton: $('//*[contains(text(), "Add/Remove")]'),
   addElementButton: $('//*[contains(text(), "Add Element")]'),
@@ -12,8 +17,14 @@ const element = {
   checkboxesButton: $('//*[contains(text(), "Checkboxes")]'),
   firstCheckboxButton: $('//*[@id="checkboxes"]/input[1]'),
   secondCheckboxButton: $('//*[@id="checkboxes"]/input[2]'),
+  aCheckboxButton: $('//*[@id="checkbox"]//input'),
   dropdownButton: $('//*[contains(text(), "Dropdown")]'),
   optionButton: $('#dropdown'),
+  dynamicControlsButton: $('//*[contains(text(), "Dynamic Controls")]'),
+  removeCheckboxButton: $('//*[@id="checkbox-example"]//*[contains(text(), "Remove")]'),
+  addCheckboxButton: $('//*[@id="checkbox-example"]//*[contains(text(), "Add")]'),
+  enableButton: $('//*[@id="input-example"]//*[contains(text(), "Enable")]'),
+  disableButton: $('//*[@id="input-example"]//*[contains(text(), "Disable")]'),
 };
 
 const herokuUrl = "https://the-internet.herokuapp.com/";
@@ -47,6 +58,11 @@ const herokuWebPage = function herokuwebpage () {
     };
   };
 
+  this.inputField = async (test) => {
+    await inputField.waitForClickable();
+    await inputField.setValue(test);
+  }
+
   this.validateSelectDropdown = async () => {
     await dropdownText.waitForDisplayed({ timeout: 10000 });
   };
@@ -61,6 +77,18 @@ const herokuWebPage = function herokuwebpage () {
 
   this.validateDeleteElements = async () => {
     await deleteText.waitForDisplayed({ reverse:true, timeout: 10000 });
+  };
+
+  this.validateRemoveACheckbox = async () => {
+    await goneMessage.waitForDisplayed({ timeout: 10000 })
+  };
+
+  this.validateAddACheckbox = async () => {
+    await backMessage.waitForDisplayed({ timeout: 10000 })
+  };
+
+  this.validateDisabledField = async () => {
+    await disabledMessage.waitForDisplayed({ timeout: 10000 })
   };
 };
 

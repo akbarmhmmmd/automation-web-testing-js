@@ -10,22 +10,44 @@ When(/^User click (Add Remove Element|Add Element|Delete Element|Context Menu|Ch
   await heroku.clickAction(click);
 });
 
+When(/^User click (A Checkbox|Dynamic Controls|Remove Checkbox|Add Checkbox|Enable|Disable) Button$/
+  , async (click) => {
+  await heroku.clickAction(click);
+});
+
 When(/^User select (First|Second) Option$/, async (select) => {
   await heroku.selectOption(select);
 });
 
-Then('User success select Dropdown', async () => {
-  await heroku.validateSelectDropdown();
-});
+When(/^User input field "([^"]*)"$/, async (test) => {
+  await heroku.inputField(test);
+})
 
-Then('User success click Checkboxes', async () => {
-  await heroku.validateCheckBox();
-});
-
-Then('User success Add Element', async () => {
-  await heroku.validateAddElements();
-});
-
-Then('User success Delete Element', async () => {
-  await heroku.validateDeleteElements();
+Then(/^User success (select Dropdown|click Checkboxes|Add Element|Delete Element|Remove A Checkbox|Add A Checkbox|Disabled Field)$/
+  , async (validate) => {
+  switch(validate){
+  case 'select Dropdown':
+    await heroku.validateSelectDropdown();
+    break;
+  case 'click Checkboxes':
+    await heroku.validateCheckBox();
+    break;
+  case 'Add Element':
+    await heroku.validateAddElements();
+    break;
+  case 'Delete Element':
+    await heroku.validateDeleteElements();
+    break;
+  case 'Remove A Checkbox':
+    await heroku.validateRemoveACheckbox();
+    break;
+  case 'Disabled Field':
+    await heroku.validateDisabledField();
+    break;
+  case 'Add A Checkbox':
+    await heroku.validateAddACheckbox();
+    break;
+  default: 
+    throw new Error('Option does not exist');
+  };
 });
