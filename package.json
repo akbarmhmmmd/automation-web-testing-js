@@ -2,7 +2,6 @@
   "name": "web-automation-testing",
   "version": "1.0.0",
   "description": "Web Automation Testing Project with Cucumber and WebdriverIO",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "wdio": "wdio run ./wdio.conf.js",
