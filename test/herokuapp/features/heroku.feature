@@ -1,4 +1,4 @@
-@akbartesting @the-internet
+@akbar-testing @the-internet
 Feature: User simulating example in Heroku Web
 
   Background:
