@@ -4,10 +4,16 @@ const fieldEmail = $('#userEmail');
 const fieldCurrentAddress = $('#currentAddress');
 const fieldPermanentAddress = $('#permanentAddress');
 const outputText = $('#output');
+const desktopText = $('//*[contains(text(), "Desktop")]');
 const element = {
     elementsMenuButton: $('//*[@id="app"]//*[contains(text(), "Elements")]'),
-    textBoxButton: $('//*[contains(text(), "Text Box")]'),
+    textBoxButton: $('//*[@class="menu-list"]//*[contains(text(), "Text Box")]'),
     submitButton: $('#submit'),
+    checkBoxButton: $('//*[@class="menu-list"]//*[contains(text(), "Check Box")]'),
+    homeToggleButton : $('//*[@id="tree-node"]/ol/li/span/button'),
+    desktopToggleButton: $('//*[@id="tree-node"]/ol/li/ol/li[1]/span/button'),
+    documentsToggleButton: $('//*[@id="tree-node"]/ol/li/ol/li[2]/span/button'),
+    downloadsToggleButton: $('//*[@id="tree-node"]/ol/li/ol/li[3]/span/button'),
 };
 
 const demoQAUrl = 'https://demoqa.com/';
