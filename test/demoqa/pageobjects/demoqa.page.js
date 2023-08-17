@@ -37,6 +37,9 @@ const DemoQAPage = function demoqapage () {
       case 'Email':
         await fieldEmail.setValue(email);
         break;
+      case 'Invalid Email':
+        await fieldEmail.setValue(userName);
+        break;
       case 'Current Address':
         await fieldCurrentAddress.setValue(currentAddress);
         break;
@@ -57,6 +60,10 @@ const DemoQAPage = function demoqapage () {
   this.validateSubmitForm = async () => {
     await outputText.scrollIntoView();
     await outputText.waitForDisplayed({ timeout: 10000 });
+  };
+
+  this.validateFailSubmitForm = async () => {
+    await outputText.waitForDisplayed({ reverse: true });
   };
 };
 

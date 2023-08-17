@@ -13,6 +13,12 @@ When(/^User input ([^"]*) Field$/, async (input) => {
   await demoqa.inputField(input);
 });
 
-Then('User can view Submitted Data', async () => {
-  await demoqa.validateSubmitForm();
+Then(/^User can( | not )view Submitted Data$/, async (data) => {
+  switch (data) {
+    case ' ' :
+      await demoqa.validateSubmitForm();
+      break;
+    case ' not' :
+      await demoqa.validateFailSubmitForm();
+  };
 });
