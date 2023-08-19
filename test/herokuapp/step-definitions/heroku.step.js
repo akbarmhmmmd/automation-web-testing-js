@@ -5,13 +5,7 @@ Given('User on Heroku Web', async () => {
   await heroku.validateHerokuWebPage();
 });
 
-When(/^User click (Add Remove Element|Add Element|Delete Element|Context Menu|Checkboxes|First Checkbox|Second Checkbox|Dropdown|Option) Button$/
-  , async (click) => {
-  await heroku.clickAction(click);
-});
-
-When(/^User click (A Checkbox|Dynamic Controls|Remove Checkbox|Add Checkbox|Enable|Disable) Button$/
-  , async (click) => {
+When(/^User click ([^"]*) Button$/, async (click) => {
   await heroku.clickAction(click);
 });
 
@@ -23,8 +17,7 @@ When(/^User input field "([^"]*)"$/, async (test) => {
   await heroku.inputField(test);
 })
 
-Then(/^User success (select Dropdown|click Checkboxes|Add Element|Delete Element|Remove A Checkbox|Add A Checkbox|Disabled Field)$/
-  , async (validate) => {
+Then(/^User success ([^"]*)$/, async (validate) => {
   switch(validate){
   case 'select Dropdown':
     await heroku.validateSelectDropdown();
