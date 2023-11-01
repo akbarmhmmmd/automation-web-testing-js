@@ -33,6 +33,7 @@ const herokuWebPage = function herokuwebpage () {
   this.validateHerokuWebPage = async () => {
     await browser.pause(1000);
     await browser.url(herokuUrl);
+    await browser.maximizeWindow();
     await expect(browser).toHaveUrlContaining("herokuapp");
     await expect(welcomeText).toHaveTextContaining("Welcome");
   };

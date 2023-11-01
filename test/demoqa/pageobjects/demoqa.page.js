@@ -26,8 +26,8 @@ const DemoQAPage = function demoqapage () {
   this.validateDemoQAPage = async () => {
     await browser.pause(1000);
     await browser.url(demoQAUrl);
+    await browser.maximizeWindow();
     await expect(browser).toHaveUrl(demoQAUrl);
-    await browser.maximize();
   };
 
   this.inputField = async (input) => {
@@ -54,6 +54,7 @@ const DemoQAPage = function demoqapage () {
 
   this.clickAction = async (click) => {
     const clickButton = (click.charAt(0).toLowerCase() + click.slice(1)).replace(/\s+/g, '');
+    await element[`${clickButton}Button`].scrollIntoView();
     await element[`${clickButton}Button`].waitForClickable();
     await element[`${clickButton}Button`].click();
   };
