@@ -24,7 +24,6 @@
     "wdio-nuxt-service": "^0.1.0"
   },
   "dependencies": {
-    "update": "^0.7.4",
-    "webdriverio": "^8.14.3"
+    "webdriverio": "^8.20.4"
   }
 }
