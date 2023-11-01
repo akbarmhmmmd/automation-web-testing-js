@@ -27,6 +27,7 @@ const DemoQAPage = function demoqapage () {
     await browser.pause(1000);
     await browser.url(demoQAUrl);
     await expect(browser).toHaveUrl(demoQAUrl);
+    await browser.maximize();
   };
 
   this.inputField = async (input) => {
