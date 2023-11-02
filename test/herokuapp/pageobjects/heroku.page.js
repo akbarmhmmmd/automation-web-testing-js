@@ -9,6 +9,8 @@ const goneMessage = $('//*[@id="checkbox-example"]//*[contains(text(), "gone")]'
 const backMessage = $('//*[@id="checkbox-example"]//*[contains(text(), "back")]');
 const inputField = $('//*[@id="input-example"]/input');
 const disabledMessage = $('//*[@id="input-example"]//*[contains(text(), "disabled")]');
+const modalWindow = $('//*[contains(text(), "modal window")]');
+const displaysText = $('//*[contains(text(), "Displays")]');
 const element = {
   addRemoveElementButton: $('//*[contains(text(), "Add/Remove")]'),
   addElementButton: $('//*[contains(text(), "Add Element")]'),
@@ -25,6 +27,9 @@ const element = {
   addCheckboxButton: $('//*[@id="checkbox-example"]//*[contains(text(), "Add")]'),
   enableButton: $('//*[@id="input-example"]//*[contains(text(), "Enable")]'),
   disableButton: $('//*[@id="input-example"]//*[contains(text(), "Disable")]'),
+  entryAdMenuButton: $('//*[contains(text(), "Entry Ad")]'),
+  closeModalButton: $('//*[contains(text(), "Close")]'),
+  clickHereButton: $('//*[contains(text(), "click here")]'),
 };
 
 const herokuUrl = "https://the-internet.herokuapp.com/";
@@ -62,7 +67,7 @@ const herokuWebPage = function herokuwebpage () {
   this.inputField = async (test) => {
     await inputField.waitForClickable();
     await inputField.setValue(test);
-  }
+  };
 
   this.validateSelectDropdown = async () => {
     await dropdownText.waitForDisplayed({ timeout: 10000 });
@@ -81,15 +86,25 @@ const herokuWebPage = function herokuwebpage () {
   };
 
   this.validateRemoveACheckbox = async () => {
-    await goneMessage.waitForDisplayed({ timeout: 10000 })
+    await goneMessage.waitForDisplayed({ timeout: 10000 });
   };
 
   this.validateAddACheckbox = async () => {
-    await backMessage.waitForDisplayed({ timeout: 10000 })
+    await backMessage.waitForDisplayed({ timeout: 10000 });
   };
 
   this.validateDisabledField = async () => {
-    await disabledMessage.waitForDisplayed({ timeout: 10000 })
+    await disabledMessage.waitForDisplayed({ timeout: 10000 });
+  };
+
+  this.validateEntryAdPage = async () => {
+    await displaysText.waitForDisplayed({ timeout: 10000 });
+    await expect(displaysText).toBeDisplayed({ timeout: 5000 });
+  };
+
+  this.validateModalWindow = async () => {
+    await modalWindow.waitForDisplayed({ timeout: 10000 });
+    await expect(modalWindow).toBeDisplayed({ timeout: 5000 });
   };
 };
 

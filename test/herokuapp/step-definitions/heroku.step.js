@@ -40,6 +40,9 @@ Then(/^User success ([^"]*)$/, async (validate) => {
   case 'Add A Checkbox':
     await heroku.validateAddACheckbox();
     break;
+  case 'Enter Entry Ad Menu':
+    await heroku.validateEntryAdPage();
+    break;
   default: 
     throw new Error('Option does not exist');
   };

@@ -47,3 +47,15 @@ Feature: User simulating example in Heroku Web
     And User input field "Test"
     And User click Disable Button
     Then User success Disabled Field
+
+  Scenario: User can close Modal Window on Entry Ad Menu
+    When User click Entry Ad Menu Button
+    And User click Close Modal Button
+    Then User success Enter Entry Ad Menu
+
+  Scenario: User can Re-Enable Modal Window Entry Ad Menu
+    When User click Entry Ad Menu Button
+    And User click Click Here Button
+    And User click Click Here Button
+    And User click Close Modal Button
+    Then User success Enter Entry Ad Menu
