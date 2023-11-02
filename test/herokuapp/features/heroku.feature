@@ -53,7 +53,7 @@ Feature: User simulating example in Heroku Web
     And User click Close Modal Button
     Then User success Enter Entry Ad Menu
 
-  Scenario: User can Re-Enable Modal Window Entry Ad Menu
+  Scenario: User can Re-enable Modal Window Entry Ad Menu
     When User click Entry Ad Menu Button
     And User click Click Here Button
     And User click Click Here Button
