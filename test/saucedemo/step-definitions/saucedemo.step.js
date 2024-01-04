@@ -1,22 +1,22 @@
 import { Given, When, Then } from '@cucumber/cucumber';
-import sauceDemoPage from '../pageobjects/saucedemo.page';
+import sauce from '../pageobjects/saucedemo.page';
 
 Given('User on Sauce Demo Page', async () => {
-  await sauceDemoPage.validateSauceDemoPage();
+  await sauce.validateSauceDemoPage();
 });
 
 When('User input username', async () => {
-  await sauceDemoPage.inputUser();
+  await sauce.inputUser();
 });
 
 When('User input password', async () => {
-  await sauceDemoPage.inputPassword();
+  await sauce.inputPassword();
 });
 
 When('User click Login button', async () => {
-  await sauceDemoPage.clickLogin();
+  await sauce.clickLogin();
 });
 
 Then('User success login', async () => {
-  await sauceDemoPage.validateProductPage();
+  await sauce.validateProductPage();
 });

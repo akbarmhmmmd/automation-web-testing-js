@@ -1,9 +1,9 @@
 // NOTES SAUCEDEMO APP PAGE OBJECTS
 const sauceDemoUrl = 'https://saucedemo.com';
 const swagLabsText = $('//*[@id="root"]//*[contains(text(), "Swag Labs")]');
-const userField = '#user-name';
-const passField = '#password';
-const loginButton = '#login-button';
+const userField = $('#user-name');
+const passField = $('#password');
+const loginButton = $('#login-button');
 const productsText = $('//*[contains(text(), "Products")]');
 
 const username = 'standard_user';
