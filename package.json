@@ -19,7 +19,7 @@
     "@wdio/cucumber-framework": "^8.13.9",
     "@wdio/local-runner": "^8.13.12",
     "@wdio/spec-reporter": "^8.12.2",
-    "chromedriver": "^119.0.1",
+    "chromedriver": "^122.0.6261.111",
     "wdio-chromedriver-service": "^8.1.1",
     "wdio-nuxt-service": "^0.1.0"
   },
