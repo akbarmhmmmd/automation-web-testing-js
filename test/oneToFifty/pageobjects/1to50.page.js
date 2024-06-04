@@ -4,7 +4,6 @@ const homePage = $('//*[@aria-hidden="false"]');
 const adFrame = $('//*[@id="ad_iframe"]');
 const yourScore = $('//*[contains(text(), "1to50, Your score")]');
 const dismissAdButton = $('//*[@id="dismiss-button"]');
-const numberOfGridElements = 50;
 const oneToFiftyUrl = 'https://zzzscore.com/1to50/en/';
 
 const oneToFiftyWebPage = function oneToFiftywebpage () {
@@ -17,7 +16,7 @@ const oneToFiftyWebPage = function oneToFiftywebpage () {
 
     this.clickNumbers = async () => {
         await restartButton.scrollIntoView();
-        for (let i = 1; i <= numberOfGridElements; i++) {
+        for (let i = 1; i <= 50; i++) {
             const xpath = `//*[@class="grid x5"]//div[text()="${i}"]`;
             await browser.$(xpath).click();
         }
