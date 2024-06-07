@@ -8,8 +8,17 @@ const homePage = $('//*[@class="app_logo"][contains(text(), "Swag Labs")]');
 const wrongAlert = $('//*[contains(text(), "do not match")]');
 const lockedOut = $('//*[contains(text(), "locked out")]');
 const visualError = $('//*[@src="/static/media/sl-404.168b1cce.jpg"]');
-const burgerButton = $('//button[@id="react-burger-menu-btn"]')
-const logoutButton = $('//*[contains(text(), "Logout")]')
+const burgerButton = $('//button[@id="react-burger-menu-btn"]');
+const logoutButton = $('//*[contains(text(), "Logout")]');
+const shoppingCart = $('//*[@class="shopping_cart_badge"]')
+const element = {
+  addBackpackButton: $('#add-to-cart-sauce-labs-backpack'),
+  addBikeLightButton: $('#add-to-cart-sauce-labs-bike-light'),
+  addBoltTShirtButton: $('#add-to-cart-sauce-labs-bolt-t-shirt'),
+  addFleeceJacketButton: $('#add-to-cart-sauce-labs-fleece-jacket'),
+  addOnesieButton: $('#add-to-cart-sauce-labs-onesie'),
+  addRedTShirtButton: $('#add-to-cart-test.allthethings()-t-shirt-(red)'),
+};
 
 // const username = 'standard_user';
 // const password = 'secret_sauce';
@@ -20,6 +29,12 @@ const sauceDemoPage = function saucedemopage () {
     await browser.maximizeWindow();
     await expect(browser).toHaveUrlContaining("saucedemo");
     await swagLabsText.waitForDisplayed({ timeout: 5000 });
+  };
+
+  this.clickAction = async (click) => {
+    const clickButton = (click.charAt(0).toLowerCase() + click.slice(1)).replace(/\s+/g, '');
+    await element[`${clickButton}Button`].waitForClickable();
+    await element[`${clickButton}Button`].click();
   };
 
   this.inputUser = async (username) => {
@@ -38,11 +53,18 @@ const sauceDemoPage = function saucedemopage () {
     await browser.pause(2000);
   };
 
-  this.validateLogin = async() => {
+  this.validateAddCart = async (cart) => {
+    await shoppingCart.waitForDisplayed({ timeout: 5000 });
+    await shoppingCart.click();
+    const xpath = `//*[contains(text(), '${cart}')]`;
+    await browser.$(xpath).waitForDisplayed({timeout:5000});
+  };
+
+  this.validateLogin = async () => {
     await homePage.waitForDisplayed({ timeout: 10000 });
   };
 
-  this.validateFailedLogin = async(failed) => {
+  this.validateFailedLogin = async (failed) => {
     switch (failed){
       case 'invalid':
         await wrongAlert.waitForDisplayed({ timeout: 10000 });
